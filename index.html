@@ -14,21 +14,25 @@
     <title>Issue Tracker</title>
 </head>
 <body>
-    <h1>Add New Issue:</h1>
-    <form>
-        <label for="description">Description</label><br>
-        <input type="text" placeholder="Describe the issue..." id="description"><br>
-        <label  for="severity">Severity</label><br>
-        <select type="text" placeholder="Describe the issue..." id="severity" >
-            <option>Low</option>
-
-            <option>Medium</option>
-
-            <option>High</option>
-        </select><br>
-        <label   for="assigned">Assigned To</label><br>
-        <input type="text" placeholder="Enter responsible..." id="assigned"><br>
-        <input type="submit" value="Add" id="add" name="add">
-    </form>
+  <div class="jumbotron">
+  <h3>Add New Issue:</h3>
+  <form id="issueInputForm">
+    <div class="form-group">
+      <label for="issueDescInput">Description</label>
+      <input type="text" class="form-control" id="issueDescInput" placeholder="Describe the issue ...">
+    </div> 
+    <div class="form-group"> 
+      <label for="issueDescInput">Severity</label>
+      <select class="form-control" id="issueSeverityInput">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option> </select>
+    </div> 
+    <div class="form-group">
+      <label for="issueDescInput">Assigned To</label>
+      <input type="text" class="form-control" id="issueAssignedToInput" placeholder="Enter responsible ...">
+    </div> <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+  </div>
 </body>
 </html>
