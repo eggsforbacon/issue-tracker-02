@@ -16,19 +16,19 @@
 <body>
     <h1>Add New Issue:</h1>
     <form>
-        <label>Description</label><br>
-        <input type="text" placeholder="Describe the issue..."><br>
-        <label>Severity</label><br>
-        <select type="text" placeholder="Describe the issue...">
+        <label for="description">Description</label><br>
+        <input type="text" placeholder="Describe the issue..." id="description"><br>
+        <label  for="severity">Severity</label><br>
+        <select type="text" placeholder="Describe the issue..." id="severity" >
             <option>Low</option>
 
             <option>Medium</option>
 
             <option>High</option>
         </select><br>
-        <label>Assigned To</label><br>
-        <input type="text" placeholder="Enter responsible..."><br>
-        <input type="submit" value="Add">
+        <label   for="assigned">Assigned To</label><br>
+        <input type="text" placeholder="Enter responsible..." id="assigned"><br>
+        <input type="submit" value="Add" id="add" name="add">
     </form>
 </body>
 </html>
