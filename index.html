@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="http://chancejs.com/chance.min.js"></script>
 </head>
-<body>
+<body onload="fetchIssues()">
     <div class="container">
         <section>
-            <h1>Issue Tracker</h1>
-            <div class="footer">
-                <p>Taller en Clase de Proyecto Integrador I - 2022</p>
-            </div>
+        <h1>Issue Tracker</h1>
+        <div class="footer">
+            <p>Taller en Clase de Proyecto Integrador I - 2022</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-12"> 
+                <div id="issuesList"> 
+                </div> 
+            </div> 
+        </div>
         </section>
-
         <section>
             <div class="jumbotron"> 
                 <h3>Add New Issue:</h3> 
@@ -42,7 +47,6 @@
             </div>
         </section>
     </div>
-
     <script src="main.js"></script>
 </body>
 </html>
