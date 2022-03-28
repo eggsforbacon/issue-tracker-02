@@ -12,9 +12,9 @@ function saveIssue(e) {
 
     let issue = {
         id: issueId,
-        description: issueDescription,
-        severity: issueSeverity,
-        assignee: issueAssignee,
+        description: issueDescription.value,
+        severity: issueSeverity.value,
+        assignee: issueAssignee.value,
         status: issueStatus
     };
 
@@ -32,7 +32,34 @@ function saveIssue(e) {
 
     document.getElementById('issueInputForm').reset();
  
-    fetchIssues(); /* <-- Not yet implemented */
+    fetchIssues();
     e.preventDefault(); 
 
 }
+
+function fetchIssues () {
+    var issues = JSON.parse(localStorage.getItem('issues'));
+    var issuesList = document.getElementById('issuesList');
+    
+    issuesList.innerHTML = '';
+    
+    if (issues != null) {    
+      for (var i = 0; i < issues.length; i++) {
+        var id = issues[i].id;
+        var desc = issues[i].description;
+        var severity = issues[i].severity;
+        var assignee = issues[i].assignee;
+        var status = issues[i].status;
+        
+        issuesList.innerHTML +=   '<div class="well">'+
+                                  '<h6>Issue ID: ' + id + '</h6>'+
+                                  '<p><span class="label label-info">' + status + '</span></p>'+
+                                  '<h3>' + desc + '</h3>'+
+                                  '<p><span class="glyphicon glyphicon-time"></span> ' + severity + ' '+
+                                  '<span class="glyphicon glyphicon-user"></span> ' + assignee + '</p>'+
+                                  '<a href="#" class="btn btn-warning" onclick="closeIssue(\"id"\')">Close</a>' +
+                                  '<a href="#" class="btn btn-danger" onclick="deleteIssue(\"id"\')">Delete</a>' +
+                                  '</div>';
+      }
+    }
+  }
