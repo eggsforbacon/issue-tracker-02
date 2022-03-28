@@ -66,3 +66,21 @@ function fetchIssues () {
       }
     }
 }
+
+
+function deleteIssue (id) {
+    var issues = JSON.parse(localStorage.getItem('issues'));
+
+    for (let i = 0; i < issues.length; i++) {
+        const issue = issues[i];
+        if (issue.id === id) {
+            issues.splice(i,1);
+            break;
+        }
+    }
+
+    localStorage.setItem('issues', JSON.stringify(issues));
+
+    console.log(localStorage);
+    fetchIssues();
+}
